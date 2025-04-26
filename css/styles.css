@@ -1,0 +1,1037 @@
+/* Variables de couleur */
+:root {
+    --couleur-principale: #007BFF; /* Bleu principal */
+    --couleur-secondaire: #FFA500; /* Orange pour les effets hover */
+    --fond-principal: #F8F9FA; /* Gris clair pour le fond */
+    --texte-principal: #333333; /* Noir profond pour le texte principal */
+}
+
+
+/* Variables sombre */
+
+body.sombre {
+    --couleur-principale: #4CAF50; /* Vert pour le thème sombre */
+    --couleur-secondaire: #FFC107; /* Jaune pour les effets hover */
+    --fond-principal: #121212; /* Fond sombre */
+    --texte-principal: #E0E0E0; /* Texte clair */
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style global */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--fond-principal);
+    color: var(--texte-principal);
+    line-height: 1.6;
+}
+
+/* Style du header */
+.entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--couleur-principale);
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.barre-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.barre-navigation li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.barre-navigation li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--couleur-secondaire);
+    transition: width 0.3s ease;
+}
+
+.barre-navigation li a:hover {
+    color: var(--couleur-secondaire);
+}
+
+.barre-navigation li a:hover::after {
+    width: 100%;
+}
+
+
+/* Menu hamburger */
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.barre-navigation {
+    display: flex;
+}
+
+@media (max-width: 468px) { /* Alternative à voir 768px */
+    .hamburger {
+        display: block;
+    }
+
+    .barre-navigation {
+        display: none;
+        flex-direction: column;
+        background-color: color-mix(in srgb, var(--couleur-principale), transparent 25%);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 300px;
+        padding: 10px;
+    }
+
+    #menu-toggle:checked ~ .barre-navigation {
+        display: flex;
+    }
+}
+
+
+
+/* Style de la section Accueil */
+.accueil {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 40px;
+}
+
+.introduction {
+    flex: 1;
+    max-width: 50%;
+}
+
+.introduction h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--couleur-principale);
+}
+
+.introduction p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.bouton-contact {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--couleur-secondaire);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.bouton-contact:hover {
+    background-color: #d17f00;
+}
+
+.image-accueil img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Boutons flottants */
+.boutons-flottants {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.bouton-flottant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--couleur-principale);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.bouton-flottant:hover {
+    background-color: var(--couleur-secondaire);
+    transform: scale(1.1);
+}
+
+.bouton-flottant i {
+    font-size: 35px;
+}
+
+
+/* Masquer les boutons lors des modales */
+.modal + .boutons-flottants {
+    display: none;
+}
+
+/* Style de la section "Notre Identité" */
+.notre-identite {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--couleur-principale);
+}
+
+.notre-identite h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--fond-principal);
+}
+
+.cartes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.carte {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.carte:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carte-visible h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.carte-visible p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Style des modales */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenu {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.modal-contenu h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.modal-contenu p, .modal-contenu ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.modal-contenu ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.fermer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--texte-principal);
+}
+
+.fermer:hover {
+    color: var(--couleur-secondaire);
+}
+
+/* Style de la section "Expertise et Services" */
+.expertise-services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--fond-principal);
+}
+
+.expertise-services h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--couleur-principale);
+}
+
+.conteneur-expertise {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.carte-expertise {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.carte-expertise:hover {
+    background-color: var(--couleur-principale);
+    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icone-expertise img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.carte-expertise:hover .icone-expertise img {
+    transform: scale(1.1);
+}
+
+.details-expertise h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.carte-expertise:hover .details-expertise h3 {
+    color: white;
+}
+
+.details-expertise p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.carte-expertise:hover .details-expertise p {
+    color: white;
+}
+
+/* Style de la section "Nos Projets Réalisés" */
+/* Conteneur principal des catégories */
+.conteneur-categories {
+    position: relative;
+}
+
+/* Cache toutes les catégories par défaut */
+.categorie {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Affiche la catégorie active */
+.categorie.active {
+    display: block;
+    position: static;
+}
+
+/* Grille responsive pour les projets */
+.conteneur-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (min-width: 1200px) {
+    .conteneur-projets {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.nos-projets {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--couleur-principale);
+}
+
+.nos-projets h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--fond-principal);
+}
+
+.liste-projets h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--couleur-principale);
+}
+
+
+.categorie.active .categorie h3 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--couleur-principale);
+}
+
+.conteneur-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Largeur minimale de 250px */
+    gap: 20px; /* Espacement entre les projets */
+    justify-items: stretch; /* Étire les cartes pour remplir la largeur disponible */
+    width: 100%; /* S'assure que le conteneur prend toute la largeur disponible */
+    max-width: 1200px; /* Limite la largeur maximale pour éviter des colonnes trop larges */
+    margin: 0 auto; /* Centre le conteneur */
+}
+
+@media (min-width: 1200px) {
+    .conteneur-projets {
+        grid-template-columns: repeat(4, 1fr); /* Force 4 colonnes sur grands écrans */
+    }
+}
+
+.projet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.projet img {
+    width: 100%;
+    height: auto;
+}
+
+.details-projet {
+    padding: 20px;
+}
+
+.details-projet h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--texte-principal);
+}
+
+.details-projet p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.btn-details {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--couleur-secondaire);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-details:hover {
+    background-color: #d17f00;
+}
+
+.details-cache {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+.projet:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style de la section Leadership */
+.leadership {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--fond-principal);
+}
+
+.leadership h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--couleur-principale);
+}
+
+.conteneur-leadership {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.membre {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membre:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    object-fit: cover;
+    border: 4px solid var(--couleur-principale);
+}
+
+.details-membre h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    color: var(--texte-principal);
+}
+
+.details-membre p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.details-membre a {
+    color: var(--couleur-secondaire);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.details-membre a:hover {
+    color: #d17f00;
+}
+
+/* Style de la section "Pourquoi Choisir SEROM ?" */
+.pourquoi-choisir {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--couleur-principale);
+    color: white;
+}
+
+.pourquoi-choisir h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.conteneur-raisons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.raison {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.raison:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.icone-raison img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid white;
+}
+
+.details-raison h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.details-raison p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Style de la section "Nos Équipes et Partenaires Matériels" */
+.equipes-materiel {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--fond-principal);
+}
+
+.equipes-materiel h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--couleur-principale);
+}
+
+.conteneur-equipes-materiel {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.equipe, .partenaire {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equipe:hover, .partenaire:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.equipe h3, .partenaire h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--texte-principal);
+}
+
+.equipe p, .partenaire p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+/* Style du Footer */
+.pied-de-page {
+    padding: 30px 20px;
+    background-color: var(--couleur-principale);
+    color: white;
+    text-align: center;
+}
+
+.reseaux-sociaux {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+/* Style spécifique pour la section "Nos Moyens Matériels" */
+.moyens-materiel {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--couleur-principale); /* Bleu principal */
+    color: white;
+}
+
+.moyens-materiel h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.conteneur-moyens p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9); /* Blanc légèrement atténué */
+}
+
+.conteneur-moyens ul {
+    list-style: none; /* Supprimer les puces par défaut */
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.conteneur-moyens li {
+    background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.conteneur-moyens li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.conteneur-moyens li strong {
+    color: white; /* Mettre en évidence les titres */
+    font-weight: bold;
+}
+
+/* Optionnel : Ajouter des icônes */
+.conteneur-moyens li::before {
+    content: "•"; /* Icône personnalisée (peut être remplacée par une vraie icône) */
+    color: var(--couleur-secondaire); /* Orange pour les icônes */
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+/* Styles pour les liens réseaux sociaux */
+.lien-reseau {
+    text-decoration: none;
+}
+
+.lien-reseau i {
+    font-size: 30px; /* Ajustez cette valeur pour adapter la taille des icônes */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white; /* Ajoutez une couleur de fond si nécessaire */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.bx, .bxs {
+    outline: none;
+}
+
+.facebook i {
+    background-color: white; /* Bleu Facebook */
+    color: #1877F2;
+}
+
+.mail i {
+    background-color: white; /* Orange pour le mail */
+    color: #FFA500;
+}
+
+.linkedin i {
+    background-color: white; /* Bleu LinkedIn */
+    color: #0077B5;
+}
+
+.whatsapp i {
+    color: #25D366;
+}
+
+
+.lien-reseau i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.copyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Style de la section "Avis Clients" */
+.avis-clients {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--fond-principal);
+}
+
+.avis-clients h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--couleur-principale);
+}
+
+.conteneur-avis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.avis {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.avis:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icone-avis img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid var(--couleur-principale);
+}
+
+.details-avis .commentaire {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.details-avis .nom-client {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--texte-principal);
+    margin-bottom: 5px;
+}
+
+.details-avis .poste-client {
+    font-size: 14px;
+    color: #777;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Page : projets.html */
+/* Style des onglets */
+.onglets {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.onglet-btn {
+    padding: 10px 20px;
+    background-color: var(--couleur-principale);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.onglet-btn.active {
+    background-color: var(--couleur-secondaire);
+}
+
+
+/* Carte de Chargement pour les Sections Vides */
+.carte-chargement {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    margin: 50px auto;
+}
+
+.chargement-circulaire {
+    border: 4px solid var(--couleur-principale);
+    border-top: 4px solid var(--couleur-secondaire);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.carte-chargement p {
+    font-size: 16px;
+    color: #555;
+}
+
+
+
+
+/* Style des boutons d'onglets */
+.onglet-btn.active {
+    background-color: var(--couleur-secondaire); /* Couleur secondaire pour l'état actif */
+    color: white;
+    font-weight: bold; /* Mettre le texte en gras */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre pour attirer l'attention */
+}
+
+.onglet-btn:hover:not(.active) {
+    background-color: #0056b3; /* Couleur légèrement différente au survol */
+    color: white;
+}
+
+
+/* Effet de transition pour les boutons */
+.onglet-btn {
+    transition: all 0.3s ease; /* Animation fluide pour tous les changements */
+}
+
+/* Effet visuel lorsqu'un projet est sélectionné */
+.projet.actif {
+    border: 2px solid var(--couleur-principale); /* Bordure pour indiquer la sélection */
+    transform: scale(1.05); /* Légère augmentation de taille */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre renforcée */
+}
+
+/* Espacement supplémentaire entre les sections */
+.categorie {
+    margin-bottom: 40px; /* Plus d'espace entre les catégories */
+}
+
+/* Augmentation de la lisibilité des titres */
+.categorie h2 {
+    font-size: 28px; /* Taille ajustée pour les titres de section */
+    margin-bottom: 20px;
+}
+
+/* Style des modales */
+.modal-contenu {
+    max-height: 80vh; /* Limite la hauteur pour éviter le débordement */
+    overflow-y: auto; /* Ajoute une barre de défilement si nécessaire */
+}
+
+
+
+
+
+
+
+

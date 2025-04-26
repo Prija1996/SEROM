@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Projets - SEROM Madagascar</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="entete">
+        <!-- Logo -->
+        <div class="logo">
+            <h1>SEROM</h1>
+        </div>
+        <!-- Bouton hamburger -->
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        <input type="checkbox" id="menu-toggle">
+        <!-- Barre de navigation -->
+        <nav class="barre-navigation">
+            <ul class="liste-nav">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#pourquoi-nous">Pourquoi nous ?</a></li>
+                <li><a href="#nos-Services">Expertise</a></li>
+                <li><a href="#contact">Equipe</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        
+    <!-- Boutons flottants -->
+    <div class="boutons-flottants">
+        <!-- Bouton defilement -->
+        <button class="bouton-flottant retour-haut" onclick="scrollToTop()">
+            <i class='bx bx-chevron-up'></i>
+        </button>
+        <!-- Bouton WhatsApp -->
+        <a href="https://wa.me/+261342100062" target="_blank" class="bouton-flottant whatsapp">
+            <i class='bx bxl-whatsapp'></i>
+        </a>
+        <!-- Bouton Thème Sombre/Clair -->
+        <button class="bouton-flottant theme-toggle" onclick="toggleTheme()">
+            <i class='bx bx-moon'></i>
+        </button>
+    </div>
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        
+    <section class="liste-projets" id="liste-projets">
+        <!-- <h2>Liste des Projets</h2> -->
+        <div class="onglets">
+            <button class="onglet-btn active" onclick="afficherCategorie('bat')">BAT</button>
+            <button class="onglet-btn" onclick="afficherCategorie('piste')">PISTE</button>
+            <button class="onglet-btn" onclick="afficherCategorie('mpi')">MPI</button>
+            <button class="onglet-btn" onclick="afficherCategorie('aep')">AEP</button>
+            <button class="onglet-btn" onclick="afficherCategorie('ouvrage')">OUVRAGE</button>
+        </div>
+
+        
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        
+        <!-- Section BAT -->
+        <div id="bat" class="categorie active">
+            <!-- <h3>Projets BAT</h3> -->
+            <!-- Projet 1 -->
+            <div class="conteneur-projets">
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=1" alt="Projet1">
+                    <div class="details-projet">
+                        <h3>2021-2022 : Projet PAEB / FID</h3>
+                        <p><strong>Bailleur :</strong> Banque Mondiale</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet1')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet PAEB / FID -->
+                <div id="modal-projet1" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet1')">&times;</span>
+                        <h3>2021-2022 : Projet PAEB / FID</h3>
+                        <p><strong>Bailleur :</strong> Banque Mondiale</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction d’un bâtiment à deux salles de classe équipées de mobiliers scolaires et la construction d’une latrine à trois compartiments pour :</p>
+                        <ul>
+                            <li>EPP Andohavoly</li>
+                            <li>EPP Besakoa Nord</li>
+                            <li>EPP Liolava</li>
+                            <li>EPP Soarano Est</li>
+                        </ul>
+                        <p><strong>Lieu :</strong> CISCO Benenitra, Région Atsimo Andrefana, Madagascar</p>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=2" alt="Projet2">
+                    <div class="details-projet">
+                        <h3>2020-2021 : Projet DGR/MAEP</h3>
+                        <p><strong>Bailleur :</strong> RPI</p>
+                        <p><strong>Intervention :</strong> Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-Projet2')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet DGR/MAEP -->
+                <div id="modal-Projet2" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-Projet2')">&times;</span>
+                        <h3>2020-2021 : Projet DGR/MAEP</h3>
+                        <p><strong>Bailleur :</strong> RPI</p>
+                        <p><strong>Intervention :</strong> Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Description :</strong> Contrôle et surveillance des travaux de construction du Centre Agro-business (CABIZ) à Ankiliabo.</p>
+                        <p><strong>Lieu :</strong> District de Manja, Région Menabe, Madagascar</p>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=3" alt="Projet3">
+                    <div class="details-projet">
+                        <h3>2017-2018 : Projet ASARA-LOVA / FRDA</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-Projet3')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet ASARA-LOVA / FRDA -->
+                <div id="modal-Projet3" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-Projet3')">&times;</span>
+                        <h3>2017-2018 : Projet ASARA-LOVA / FRDA</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction d'un Grenier Communautaire Villageois (GCV) dans les villages :</p>
+                        <ul>
+                            <li>Ambalatany</li>
+                            <li>Vohimasy</li>
+                        </ul>
+                        <p><strong>Lieu :</strong> District de Farafangana, Région Atsimo Atsinanana, Madagascar</p>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=4" alt="Programme ACORDS">
+                    <div class="details-projet">
+                        <h3>2008 : Programme ACORDS</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-Projet4')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Programme ACORDS -->
+                <div id="modal-Projet4" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-Projet4')">&times;</span>
+                        <h3>2008 : Programme ACORDS</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction d'un CSB II à :</p>
+                        <ul>
+                            <li>Manambidala</li>
+                            <li>Mahavelo</li>
+                        </ul>
+                        <p><strong>Lieu :</strong> District de Vondrozo, Région Atsimo Atsinanana, Madagascar</p>
+                    </div>
+                </div>
+                <div class="carte-chargement">
+                    <div class="chargement-circulaire"></div>
+                    <p>Contenu à venir prochainement...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- Section PISTE -->
+        <div id="piste" class="categorie">
+            <!-- <h3>Projets PISTE</h3> -->
+            <div class="conteneur-projets">
+                <!-- Projet 5 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=18" alt="Projet SALOHI LAND’O LAKES">
+                    <div class="details-projet">
+                        <h3>2010 : Projet SALOHI LAND’O LAKES</h3>
+                        <p><strong>Intervention :</strong> Études APD-EIES</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet5')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet SALOHI LAND’O LAKES -->
+                <div id="modal-projet5" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet5')">&times;</span>
+                        <h3>Projet SALOHI LAND’O LAKES (2010)</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études APD-EIES</p>
+                        <p><strong>Lieu :</strong> District de Farafangana, Région Atsimo Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Étude des Infrastructures pour les Travaux HIMO (barrages, digues, pistes, ponts) répartis dans les Communes de :</p>
+                        <ul>
+                            <li>Farafangana</li>
+                            <li>Manambotra Sud</li>
+                            <li>Anosivelo</li>
+                            <li>Amporoforo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="carte-chargement">
+                    <div class="chargement-circulaire"></div>
+                    <p>Contenu à venir prochainement...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- Section MPI -->
+        <div id="mpi" class="categorie">
+            <!--<h3>Projets MPI</h3> -->
+            <!-- Projet 6 -->
+            <div class="conteneur-projets">
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=18" alt="Projet6">
+                    <div class="details-projet">
+                        <h3>2017 : Projet AROPA</h3>
+                        <p><strong>Intervention :</strong> Études APS-APD-EIES</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-Projet6')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet AROPA -->
+                <div id="modal-Projet6" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-Projet6')">&times;</span>
+                        <h3>Projet AROPA (2017)</h3>
+                        <p><strong>Bailleur :</strong> FIDA</p>
+                        <p><strong>Intervention :</strong> Études APS-APD-EIES</p>
+                        <p><strong>Lieu :</strong> District d'Ivohibe, Région Atsimo Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de réhabilitation des MPI :</p>
+                        <ul>
+                            <li>Andranomavo</li>
+                            <li>Andriamiely</li>
+                            <li>Sandranavy</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projet 7 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=19" alt="Projet7">
+                    <div class="details-projet">
+                        <h3>2009 : Projet WWF</h3>
+                        <p><strong>Intervention :</strong> Études APS-APD</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-Projet7')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet WWF -->
+                <div id="modal-Projet7" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-Projet7')">&times;</span>
+                        <h3>Projet WWF (2009)</h3>
+                        <p><strong>Bailleur :</strong> MAROMAGNITRA MANDROSO (WWF)</p>
+                        <p><strong>Intervention :</strong> Études APS-APD</p>
+                        <p><strong>Lieu :</strong> District de Vondrozo, Région Atsimo Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Étude de faisabilité (APS, APD) d'aménagement de la MPI Renaomby, dans la vallée de Maromagnitsy, CR Mahazoarivo.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="carte-chargement">
+                    <div class="chargement-circulaire"></div>
+                    <p>Contenu à venir prochainement...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section AEP (Vide) -->
+        <div id="aep" class="categorie">
+            <!-- <h3>Projets AEP</h3> -->
+            <!-- Projet 8 -->
+            <div class="conteneur-projets">
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=18" alt="Projet PAEB / UFP (2023-2024)">
+                    <div class="details-projet">
+                        <h3>2023-2024 : Projet PAEB / UFP (Lot 09)</h3>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-Projet8')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet PAEB / UFP (2023-2024) -->
+                <div id="modal-Projet8" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-Projet8')">&times;</span>
+                        <h3>Projet PAEB / UFP (2023-2024)</h3>
+                        <p><strong>Bailleur :</strong> Banque Mondiale</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> CISCO Maintirano, Région Melaky, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction des points d’eau – Lot 09.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 9 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=19" alt="Projet PAEB / UFP (2023-2024)">
+                    <div class="details-projet">
+                        <h3>2023-2024 : Projet PAEB / UFP(Lot 11) </h3>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet9')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet PAEB / UFP (2023-2024) -->
+                <div id="modal-projet9" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet9')">&times;</span>
+                        <h3>Projet PAEB / UFP (2023-2024)</h3>
+                        <p><strong>Bailleur :</strong> Banque Mondiale</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> CISCO Marolambo, Région Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction des points d’eau – Lot 11.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 10 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=20" alt="Projet PAEB / UFP (2023-2024)">
+                    <div class="details-projet">
+                        <h3>2023-2024 : Projet PAEB / UFP (Lot 01, 02)</h3>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet10')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet PAEB / UFP (2023-2024) -->
+                <div id="modal-projet10" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet10')">&times;</span>
+                        <h3>Projet PAEB / UFP (2023-2024)</h3>
+                        <p><strong>Bailleur :</strong> Banque Mondiale</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> CISCO Antsalova, Région Melaky, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction des points d’eau – Lot 01, 02.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 11 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=21" alt="Projet PAEB / UFP (2021-2022)">
+                    <div class="details-projet">
+                        <h3>2021-2022 : Projet PAEB / UFP (Lot 09)</h3>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet11')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet PAEB / UFP (2021-2022) -->
+                <div id="modal-projet11" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet11')">&times;</span>
+                        <h3>Projet PAEB / UFP (2021-2022)</h3>
+                        <p><strong>Bailleur :</strong> Banque Mondiale</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> CISCO Farafangana, Région Atsimo Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction des points d’eau – Lot 09.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 12 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=22" alt="Projet IFNA / UNICEF (2022)">
+                    <div class="details-projet">
+                        <h3>2022 : Projet IFNA / UNICEF</h3>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet12')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet IFNA / UNICEF (2022) -->
+                <div id="modal-projet12" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet12')">&times;</span>
+                        <h3>Projet IFNA / UNICEF (2022)</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> Commune rurale de Fahizay, District Ambositra, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux d’adduction d’eau potable.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 13 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=23" alt="Projet MATHTP (2020)">
+                    <div class="details-projet">
+                        <h3>2020 : Projet MATHTP</h3>
+                        <p><strong>Intervention :</strong> Études</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet13')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet MATHTP (2020) -->
+                <div id="modal-projet13" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet13')">&times;</span>
+                        <h3>Projet MATHTP (2020)</h3>
+                        <p><strong>Bailleur :</strong> RPI</p>
+                        <p><strong>Intervention :</strong> Études</p>
+                        <p><strong>Lieu :</strong> District d’Ambohidratrimo, Région Analamanga, Madagascar</p>
+                        <p><strong>Description :</strong> Étude d’adduction d’eau potable à Ambohipoloalina Merimandroso.</p>
+                    </div>
+                </div>
+                
+                <div class="carte-chargement">
+                    <div class="chargement-circulaire"></div>
+                    <p>Contenu à venir prochainement...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- Section OUVRAGE (Vide) -->
+        <div id="ouvrage" class="categorie">
+            <!-- <h3>Projets OUVRAGE</h3>  -->
+            <!-- Projet 14 -->
+            <div class="conteneur-projets">
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=18" alt="Projet ASARA LOVA / FDA (2017)">
+                    <div class="details-projet">
+                        <h3>2017 : Projet ASARA LOVA / FDA (Réhabilitation)</h3>
+                        <p><strong>Intervention :</strong> Études APD-EIES, DCP, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet14')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet ASARA LOVA / FDA (2017) -->
+                <div id="modal-projet14" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet14')">&times;</span>
+                        <h3>Projet ASARA LOVA / FDA (2017)</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études APD-EIES, DCP, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> District de Farafangana, Région Atsimo Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de réhabilitation des Barrages Hydro-agricoles de :</p>
+                        <ul>
+                            <li>Iandraina</li>
+                            <li>Fkt Iandraina</li>
+                            <li>CR Vohimasy</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projet 15 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=19" alt="Projet ASARA LOVA / FDA (2017)">
+                    <div class="details-projet">
+                        <h3>2017 : Projet ASARA LOVA / FDA (Pont canal)</h3>
+                        <p><strong>Intervention :</strong> Études APD-EIES, DCP, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet15')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet ASARA LOVA / FDA (2017) -->
+                <div id="modal-projet15" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet15')">&times;</span>
+                        <h3>Projet ASARA LOVA / FDA (2017)</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études APD-EIES, DCP, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> District de Farafangana, Région Atsimo Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction d'une bâche (pont canal) à Iabohazo, CR Iabohazo.</p>
+                    </div>
+                </div>
+
+                <!-- Projet 16 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=20" alt="Projet ASARA LOVA / FDA (2017)">
+                    <div class="details-projet">
+                        <h3>2017 : Projet ASARA LOVA / FDA (Réhabilitation)</h3>
+                        <p><strong>Intervention :</strong> Études APD-EIES, DCP, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet16')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet ASARA LOVA / FDA (2017) -->
+                <div id="modal-projet16" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet16')">&times;</span>
+                        <h3>Projet ASARA LOVA / FDA (2017)</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études APD-EIES, DCP, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> District de Vondrozo, Région Atsimo Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de réhabilitation des Barrages Hydro-agricoles de :</p>
+                        <ul>
+                            <li>Nandritona, CR Anadravy</li>
+                            <li>Tsaragisa, CR Vondrozo</li>
+                            <li>Antsoro Est, CR Manambidala</li>
+                            <li>Tsararano, Fkt Madiorano, CR Manambidala</li>
+                            <li>Ambodiria, Fkt Antsoro, CR Manambidala</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projet 17 -->
+                <div class="projet">
+                    <img src="https://picsum.photos/300/200?random=21" alt="Projet ASARA LOVA / FDA (2015)">
+                    <div class="details-projet">
+                        <h3>2015 : Projet ASARA LOVA / FDA (Construction)</h3>
+                        <p><strong>Intervention :</strong> Études APD-EIES, DCP, Contrôle et Surveillance des Travaux</p>
+                        <button class="btn-details" onclick="ouvrirModal('modal-projet17')">Voir plus</button>
+                    </div>
+                </div>
+
+                <!-- Modale pour le Projet ASARA LOVA / FDA (2015) -->
+                <div id="modal-projet17" class="modal">
+                    <div class="modal-contenu">
+                        <span class="fermer" onclick="fermerModal('modal-projet17')">&times;</span>
+                        <h3>Projet ASARA LOVA / FDA (2015)</h3>
+                        <p><strong>Bailleur :</strong> Union Européenne</p>
+                        <p><strong>Intervention :</strong> Études APD-EIES, DCP, Contrôle et Surveillance des Travaux</p>
+                        <p><strong>Lieu :</strong> District de Vondrozo, Région Atsimo Atsinanana, Madagascar</p>
+                        <p><strong>Description :</strong> Maîtrise d’œuvre des travaux de construction des Barrages Hydro-agricoles de :</p>
+                        <ul>
+                            <li>Mafisojo, Fkt Masomboay</li>
+                            <li>Anakasy, Fkt Anakasy</li>
+                            <li>CR Mahatsinjo</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="carte-chargement">
+                    <div class="chargement-circulaire"></div>
+                    <p>Contenu à venir prochainement...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- Footer -->
+    <footer class="pied-de-page">
+        <div class="reseaux-sociaux">
+            <a href="https://www.facebook.com" target="_blank" class="lien-reseau facebook">
+                <i class='bx bxl-facebook' ></i>
+            </a>
+            <a href="mailto:entrepriseserom@gmail.com" class="lien-reseau mail">
+                <i class='bx bx-envelope'></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="lien-reseau linkedin">
+                <i class='bx bxl-linkedin' ></i>
+            </a>
+            <a href="https://wa.me/+261342100062" target="_blank" class="lien-reseau whatsapp">
+                <i class='bx bxl-whatsapp' ></i>
+            </a>
+        </div>
+        <p class="copyright">
+            &copy; 2025 SEROM Madagascar. Tous droits réservés.
+        </p>
+    </footer>
+<!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        <!-- SEPARATEUR POUR NE PAS SE PERDRE -->
+        
+    <script>
+        // Fonction pour afficher une catégorie spécifique
+        function ouvrirModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        // Fonction pour fermer une modale
+        function fermerModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        function afficherCategorie(categorieId) {
+            const categories = document.querySelectorAll('.categorie');
+            categories.forEach(cat => cat.classList.remove('active'));
+            document.getElementById(categorieId).classList.add('active');
+
+            const boutons = document.querySelectorAll('.onglet-btn');
+            boutons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="afficherCategorie('${categorieId}')"]`).classList.add('active');
+        }
+        function toggleTheme() {
+            document.body.classList.toggle('sombre');
+        }
+        function scrollToTop() {
+    	window.scrollTo({
+        	top: 0,
+        	behavior: 'smooth' // Animation fluide
+    		});
+        }
+
+    </script>
+
+</body>
+</html>
