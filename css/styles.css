@@ -1140,3 +1140,44 @@ body {
 
 
 
+/* Style global de la section */
+.galerie-materiel {
+    overflow: hidden; /* Cache les images qui dépassent */
+    width: 100%;
+    background-color: var(--couleur-principale);
+    padding: 20px 0;
+}
+
+.conteneur-galerie {
+    display: flex;
+    animation: defilement 30s linear infinite; /* Animation de défilement */
+}
+
+.galerie {
+    display: flex;
+    gap: 20px; /* Espacement entre les images */
+}
+
+.galerie img {
+    width: 200px; /* Largeur des images */
+    height: 200px; /* Hauteur des images */
+    object-fit: cover; /* Préserve les proportions */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galerie img:hover {
+    transform: scale(1.1); /* Effet de zoom au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre renforcée */
+}
+
+/* Animation de défilement */
+@keyframes defilement {
+    0% {
+        transform: translateX(0); /* Position initiale */
+    }
+    100% {
+        transform: translateX(-100%); /* Déplace la moitié du conteneur */
+    }
+}
